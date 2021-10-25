@@ -18,7 +18,7 @@ class Gossip
     CSV.open(@@fichier_csv_for_gossips, "ab") do |csv|
       csv << [@author, @content]
     end
-    CSV.open("./db/coms.csv", "w")
+    # CSV.open("./db/coms.csv", "w")
   end
 
   def self.all

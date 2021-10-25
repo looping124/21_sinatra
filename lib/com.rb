@@ -9,23 +9,23 @@ class Com
 
    
   def initialize (author, content)
-     @author = author
-     @content = content
+    @author = author
+    @content = content
+  
   end
 
-  def sauvegarde ()
+  def sauvegarde (id)
     CSV.open("./db/coms.csv", "a") do |csv|
-      csv << [@author, @content]
+      csv << [@author, @content, id]
     end
   end
 
-  def self.all
+  def self.all()
     all_coms = []
     CSV.read("./db/coms.csv").each do |csv_line|
       all_coms << Com.new(csv_line[0], csv_line[1])
     end
-    puts "voici all_coms"
-    print all_coms
+
     return all_coms
   end
 
