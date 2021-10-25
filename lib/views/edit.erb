@@ -1,0 +1,17 @@
+<html>
+  <head>
+    <title>Modifie le potin n°<%= id %></title>
+  </head>
+  <body>
+    <h1>Modifie le potin n°<%= id %></h1>
+    <p>Tu veux participer a la désinformation généralisée ? Fait toi plaisir :</p>
+    <form action='/gossips/<%= id %>/edit' method='POST'>
+        <span>Son auteur : </span> <%= gossip.author %>
+      <br/>
+      <br/>
+       <span>Le contenu du potin :</span> 
+     <input type='text' name='gossip_content_update'  value="<%= gossip.content %>" style="width: 300px;height:100px;font-size:12pt;"/><br/>
+      <input type='submit'/>
+    </form>
+  </body>
+</html>
