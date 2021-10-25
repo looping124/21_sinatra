@@ -9,6 +9,22 @@
       <br/>
     <span>Le contenu du potin : </span><%= gossip.content %>
     <br/>
+
+    
+    <p>Commentaires :</p>
+        <% coms.each_with_index do |com, index| %>
+        <p>
+          <%= com.author %> <span> : </span>
+          <%= com.content %>
+        </p>
+      <% end %>
+  
+
+    <p>Blalance ton com :</p>
+    <form action='/gossips/:id' method='POST'>
+      Saisi ici ton nom :  <input type='text' name='com_author'/><br/>
+      Balance ton com : <input type='text' name='com_content'/><br/>
+      <input type='submit'/>
     <br/>
     <a href="/gossips/<%= id %>/edit">modifier le potin</a>
     <br/>
