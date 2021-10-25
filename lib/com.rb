@@ -20,10 +20,14 @@ class Com
     end
   end
 
-  def self.all()
+  def self.all(id)
+    puts id
     all_coms = []
     CSV.read("./db/coms.csv").each do |csv_line|
+      if csv_line[2] == id && csv_line[1] != ""
       all_coms << Com.new(csv_line[0], csv_line[1])
+      else
+      end
     end
 
     return all_coms
@@ -35,15 +39,15 @@ class Com
     return all_coms[id.to_i]
   end
 
-  def self.update(id,content)
-    all_coms = Gossip.all
-    all_coms[id.to_i].content = content
+  # def self.update(id,content)
+  #   all_coms = Gossip.all
+  #   all_coms[id.to_i].content = content
 
-    CSV.open("./db/coms.csv", "w") do |csv_line|
-      all_coms.each do |gossip|
-      csv_line << [gossip.author, gossip.content]
-      end
-    end
-  end
+  #   CSV.open("./db/coms.csv", "w") do |csv_line|
+  #     all_coms.each do |gossip|
+  #     csv_line << [gossip.author, gossip.content]
+  #     end
+  #   end
+  # end
 
 end
