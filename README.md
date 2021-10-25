@@ -1,4 +1,4 @@
-#Projet gossips en sinatra
+# Projet gossips en sinatra
 
 L'objectif de ce projet est de découvrire la gem Synatra
 
