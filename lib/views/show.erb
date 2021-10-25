@@ -7,7 +7,7 @@
     <p>Voici la page du potin n°<%= id %></p>
     <span>Son auteur : </span> <%= gossip.author %>
       <br/>
-    <span>Le contenu du potin : </span><%= gossip.content %>
+    <span>Le contenu du potin : </span> <blockquote cite ="test"><%= gossip.content %></blockquote>
     <br/>
 
     
@@ -15,7 +15,7 @@
         <% coms.each_with_index do |com, index| %>
         <p>
           <%= com.author %> <span> : </span>
-          <%= com.content %>
+           <blockquote cite ="test"><%= com.content %> </blockquote>
         </p>
       <% end %>
   

@@ -14,12 +14,15 @@ class Com
   
   end
 
+
+  #pour enregistrer un gossip
   def sauvegarde (id)
     CSV.open("./db/coms.csv", "a") do |csv|
       csv << [@author, @content, id]
     end
   end
 
+  #pour récupérer tous les commentaires d'un gossip en particulier, s'il y en a et qui ne sont pas vides
   def self.all(id)
     puts id
     all_coms = []
@@ -39,15 +42,5 @@ class Com
     return all_coms[id.to_i]
   end
 
-  # def self.update(id,content)
-  #   all_coms = Gossip.all
-  #   all_coms[id.to_i].content = content
-
-  #   CSV.open("./db/coms.csv", "w") do |csv_line|
-  #     all_coms.each do |gossip|
-  #     csv_line << [gossip.author, gossip.content]
-  #     end
-  #   end
-  # end
 
 end

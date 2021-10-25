@@ -19,7 +19,7 @@ class ApplicationController < Sinatra::Base
   end
 
   post '/gossips/:id' do
-    # @id = params[:id]
+  
     Com.new(params["com_author"], params["com_content"]).sauvegarde(params[:id].to_i)
     redirect "/gossips/#{params[:id]}"
   end 
